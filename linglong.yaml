@@ -1,0 +1,29 @@
+version: "1"
+
+package:
+  id: io.github.SmartServoFramework
+  name: SmartServoFramework
+  version: 0.8.9.1
+  kind: app
+  description: |
+    A multi-platform C++ framework used to drive Dynamixel and HerkuleX smart actuators, and its control GUI.
+
+command:
+  - /opt/apps/io.github.SmartServoFramework/files/bin/smartservogui
+
+base: org.deepin.foundation/23.0.0
+runtime: org.deepin.Runtime/23.0.1
+
+sources:
+  - kind: git
+    url: https://github.com/emericg/SmartServoFramework.git
+    version: master
+    commit: 533d19a87593d136fbe1ad2d00dd1958e0f21aa6
+
+build: |
+  cd /project/linglong/sources/SmartServoFramework.git
+  cd SmartServoGui
+  #git apply ../../../0001-install.patch
+  qmake -makefile PREFIX=${PREFIX} LIB_INSTALL_DIR=${PREFIX}/lib/${TRIPLET}
+  make -j$(nproc)
+  make install
