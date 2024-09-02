@@ -1,0 +1,26 @@
+From c469a18541adba01f4f0e7b61f960febd6498e78 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 16 Aug 2024 16:04:03 +0800
+Subject: [PATCH] install
+
+---
+ src/core/ee/vu_disasm.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/core/ee/vu_disasm.cpp b/src/core/ee/vu_disasm.cpp
+index a75d5ae..e052e4a 100644
+--- a/src/core/ee/vu_disasm.cpp
++++ b/src/core/ee/vu_disasm.cpp
+@@ -1,7 +1,8 @@
+ #include <iomanip>
+ #include <sstream>
+ #include "vu_disasm.hpp"
+-
++#include <cstdint>
++#include <string>
+ using namespace std;
+ 
+ namespace VU_Disasm
+-- 
+2.43.4
+
